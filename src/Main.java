@@ -1,4 +1,6 @@
 import br.com.estudos.screenmatch.calculos.CalculadoraDeTempo;
+import br.com.estudos.screenmatch.calculos.FiltroRecomendacao;
+import br.com.estudos.screenmatch.modelos.Episodio;
 import br.com.estudos.screenmatch.modelos.Filme;
 import br.com.estudos.screenmatch.modelos.Serie;
 
@@ -46,7 +48,14 @@ public class Main {
         calculadora.inclui(lost);
         System.out.println(calculadora.getTempoTotal());
 
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.fitra(meuFilme);
 
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setSerie(lost);
+        episodio.setTotalVisualizacoes(300);
+        filtro.fitra(episodio);
 
     }
 }
